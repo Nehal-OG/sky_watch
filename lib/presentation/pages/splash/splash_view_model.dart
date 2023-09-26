@@ -21,6 +21,7 @@ class SplashViewModel extends GetxController {
 
   final weatherResponse = Rx<WeatherData?>(null);
   WeatherData? weatherData;
+
   Future<void> _getCurrentPosition() async {
     // Get the current network connectivity status
     final connectivityResult = await Connectivity().checkConnectivity();
@@ -50,7 +51,7 @@ class SplashViewModel extends GetxController {
     await Future.delayed(
         const Duration(seconds: AppConstants.splashDelayseconds), () async {
       final connectivityResult = await Connectivity().checkConnectivity();
-
+// if there is connection API will be consume
       if (connectivityResult == ConnectivityResult.mobile ||
           connectivityResult == ConnectivityResult.wifi) {
         Get.offNamed(
@@ -58,6 +59,7 @@ class SplashViewModel extends GetxController {
           arguments: {GetArguments.weather: weatherResponse.value},
         );
       } else {
+// if there is no connection data  from database
         Get.offNamed(
           Routes.homeScreenRoute,
           arguments: {GetArguments.weather: weatherData},

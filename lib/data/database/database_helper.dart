@@ -1,6 +1,7 @@
 import 'package:sky_watch/domain/models/models.dart';
 import 'package:sqflite/sqflite.dart';
 
+// Initialzing Database
 class DatabaseHelper {
   static const String databaseName = 'weather.db';
   static const int databaseVersion = 1;
@@ -37,12 +38,14 @@ class DatabaseHelper {
     return _database!;
   }
 
+// Inserting Data
   Future<void> insertWeatherData(WeatherData weatherResponse) async {
     final db = await database;
 
     await db.insert('weather', weatherResponse.toMap());
   }
 
+// Getting data
   Future<WeatherData?> getLatestWeatherData() async {
     final db = await database;
 

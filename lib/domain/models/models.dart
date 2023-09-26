@@ -1,3 +1,4 @@
+//Model and json atonation
 class WeatherData {
   final double windSpeed;
   final int windDegrees;

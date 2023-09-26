@@ -23,6 +23,7 @@ class SettingsViewModel extends GetxController {
     Get.back();
   }
 
+// Checking which temp formate is save by user
   initialize() {
     selectedTempFormat.value =
         (_appPreferences.getTempFormate() == AppConstants.celsius)
@@ -30,6 +31,7 @@ class SettingsViewModel extends GetxController {
             : TempToggle.fahrenheit;
   }
 
+// Update setting of temp formate
   Future<void> saveSettings(BuildContext context) async {
     EasyLoading.show();
 

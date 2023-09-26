@@ -11,6 +11,7 @@ import 'package:sky_watch/presentation/resources/values_manager.dart';
 import '../data/network/network_info.dart';
 import 'app_prefs.dart';
 
+// Initilazing Everything that need to start before the Application is build
 Future<void> initAppModule() async {
   EasyLoading.instance
     ..indicatorType = EasyLoadingIndicatorType.circle

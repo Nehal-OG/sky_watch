@@ -36,17 +36,6 @@ toggleErrorText(bool displayError,
 
 // showErrorDialog(BuildContext context, {required String errorText}) {
 showErrorDialog(BuildContext context, {required String errorText}) {
-  // showDialog(
-  //   context: context,
-  //   builder: (context) {
-  //     return CustomConfirmationDialog(
-  //       headlineMessage: errorText,
-  //       confirmationButtonText: AppStrings.ok,
-  //       showErrorIcon: true,
-  //       onConfirmation: () => Get.back(),
-  //     );
-  //   },
-  // );
   showDialog(
     context: context,
     builder: (context) {
