@@ -37,7 +37,6 @@ class SplashViewModel extends GetxController {
     } else {
       // The device is not connected to the internet.
       final latestWeatherData = await databaseHelper.getLatestWeatherData();
-      print(latestWeatherData!.cloudPercentage.toString());
       weatherData = latestWeatherData;
     }
   }

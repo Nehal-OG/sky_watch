@@ -52,7 +52,6 @@ class DatabaseHelper {
     if (results.isEmpty) {
       return null;
     }
-    print(results.first);
 
     return WeatherData.fromJson(results.first);
   }
