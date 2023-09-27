@@ -46,6 +46,7 @@ dependencies:
 
   # internet connection availability
   internet_connection_checker: ^1.0.0+1
+  connectivity_plus: ^4.0.2
 
   # The following automatically resizes text to fit perfectly within its bounds
   auto_size_text: ^3.0.0
@@ -53,23 +54,20 @@ dependencies:
   # state, dependency, route management, utils, properties
   get: ^4.6.5
 
-  # dependency injection
-  get_it: ^7.2.0
-
   # Functional Programming in Dart. Purify your Dart code using efficient immutable data structures, monads, lenses and other FP tools.
   dartz: ^0.10.1
 
   # SVG rendering and widget library which allows painting and displaying Scalable Vector Graphics 1.1 files.
-  flutter_svg: ^2.0.4
+  flutter_svg: ^2.0.4 
 
   # A clean and lightweight loading/toast widget for Flutter, Easy to use without context, Support iOS、Android and Web
   flutter_easyloading: ^3.0.5
 
   # Location
   geolocator: ^10.1.0
+  
   # Database 
   sqflite: ^2.3.0
-  connectivity_plus: ^4.0.2
   
 dev_dependencies:
   flutter_test:

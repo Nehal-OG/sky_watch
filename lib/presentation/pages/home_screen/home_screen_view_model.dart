@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:sky_watch/application/app_prefs.dart';
+import 'package:sky_watch/application/functions.dart';
 import 'package:sky_watch/data/network/app_api.dart';
 import 'package:sky_watch/data/repository_impl/repository_impl.dart';
 import 'package:sky_watch/domain/models/models.dart';
@@ -202,5 +203,12 @@ class WeatherViewModel extends GetxController {
         return '🤷‍';
       }
     }
+  }
+
+  void showError(BuildContext context) {
+    showErrorDialog(
+      context,
+      errorText: 'Please Enter A City name',
+    );
   }
 }

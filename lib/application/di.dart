@@ -49,21 +49,6 @@ Future<void> initAppModule() async {
   // Network Info
   Get.lazyPut<NetworkInfo>(() => NetworkInfoImpl(InternetConnectionChecker()),
       fenix: true);
-
-  // // App Service Client
-  // Get.lazyPut<AppServiceClient>(() => AppServiceClient(dio), fenix: true);
-
-  // // Remote Data Source
-  // Get.lazyPut<RemoteDataSource>(
-  //     () => RemoteDataSourceImpl(Get.find<AppServiceClient>()),
-  //     fenix: true);
-
-//   // Repository
-//   Get.lazyPut<NetworkChecker>(
-//       () => NetworkChecker(
-//             Get.find<NetworkInfo>(),
-//           ),
-//       fenix: true);
 }
 
 initSplashModule() {
@@ -75,10 +60,7 @@ initSplashModule() {
 
 initLoginModule() {
   if (!Get.isRegistered()) {
-    // Login UseCase
-    // Get.lazyPut(() => LoginUseCase(Get.find<Repository>()));
-
-    // Login View Model
+    // Home
     Get.lazyPut<WeatherViewModel>(() => WeatherViewModel());
   }
 }
@@ -86,7 +68,7 @@ initLoginModule() {
 // SETTINGS
 initSettingsModule() {
   if (!Get.isRegistered<SettingsViewModel>()) {
-    // Replenishment MainView Model
+    // Setting
     Get.lazyPut<SettingsViewModel>(() => SettingsViewModel());
   }
 }

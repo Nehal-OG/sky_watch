@@ -62,32 +62,25 @@ class WeatherView extends StatelessWidget {
                     ],
                   ),
                   CustomTextField(
-                    textFontSize: FontSizeManager.s20,
-                    controller: weatherViewModel.cityController,
-                    hintText: AppStrings.city,
-                    suffixIconName: Icons.location_city,
-                    bottomPadding: AppPaddings.p16,
-                    onSuffixIconPressed: () {
-                      if (weatherViewModel.cityController.text.isNotEmpty) {
-                        weatherViewModel.getCityWeather(
-                            weatherViewModel.cityController.text);
-                      } else {
-                        const SnackBar(
-                          content: Text('Please Enter A City'),
-                          duration: Duration(seconds: 5),
-                        );
-                      }
-                    },
-                    isLastTextField: true,
-                    onSubmitted: (value) =>
-                        weatherViewModel.cityController.text.isNotEmpty
-                            ? weatherViewModel.getCityWeather(
-                                weatherViewModel.cityController.text)
-                            : const SnackBar(
-                                content: Text('Please Enter A City'),
-                                duration: Duration(seconds: 5),
-                              ),
-                  ),
+                      textFontSize: FontSizeManager.s20,
+                      controller: weatherViewModel.cityController,
+                      hintText: AppStrings.city,
+                      suffixIconName: Icons.location_city,
+                      bottomPadding: AppPaddings.p16,
+                      onSuffixIconPressed: () {
+                        if (weatherViewModel.cityController.text.isNotEmpty) {
+                          weatherViewModel.getCityWeather(
+                              weatherViewModel.cityController.text);
+                        } else {
+                          weatherViewModel.showError(context);
+                        }
+                      },
+                      isLastTextField: true,
+                      onSubmitted: (value) =>
+                          weatherViewModel.cityController.text.isNotEmpty
+                              ? weatherViewModel.getCityWeather(
+                                  weatherViewModel.cityController.text)
+                              : weatherViewModel.showError(context)),
                   Padding(
                     padding: EdgeInsets.only(
                       left: MediaQuery.of(context).size.width / 10,
